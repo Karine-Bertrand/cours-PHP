@@ -3,6 +3,7 @@
     echo "hello world!";
 
     echo "test Github";
+    echo "second test";
 
     // phpinfo();
 
