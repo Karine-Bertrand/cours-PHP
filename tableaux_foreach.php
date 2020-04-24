@@ -62,11 +62,11 @@ $ete = [
     ],
 ];
 echo "<ul>";
-foreach ($ete as $element => $legume) {
-    echo "<li>" . $element . "</li>";
+foreach ($ete as $legume => $caracteristiques) {
+    echo "<li>" . $legume . "</li>";
         echo "<ul>";
-            foreach ($legume as $clé => $valeur){
-                echo "<li><strong>" . $clé . " : </strong>" . $valeur . "</li>";
+            foreach ($caracteristiques as $cle_legume => $valeur){
+                echo "<li><strong>" . $cle_legume . " : </strong>" . $valeur . "</li>";
             }
         echo "</ul>";
 }
@@ -82,39 +82,39 @@ echo "<hr>";
 $saisons = [
     "été" => [
         "aubergines" => [
-            "quantité" => 12,
-            "prix" => 5
+            "quantité" => 10,
+            "prix" => 2
         ],
         "tomates" => [
-            "quantité" => 10,
-            "prix" => 6
+            "quantité" => 15,
+            "prix" => 3
         ]
     ],
     "automne" => [
-        "pomems de terre" => [
-            "quantité" => 12,
-            "prix" => 5
+        "pommes de terre" => [
+            "quantité" => 20,
+            "prix" => 2.5
         ],
         "carottes" => [
-            "quantité" => 10,
-            "prix" => 6
+            "quantité" => 25,
+            "prix" => 3.5
         ]
     ],
     "hiver" => [
         "avocats" => [
-            "quantité" => 12,
-            "prix" => 5
+            "quantité" => 30,
+            "prix" => 4
         ],
         "pêches" => [
-            "quantité" => 10,
-            "prix" => 6
+            "quantité" => 35,
+            "prix" => 4.5
         ]
     ]
 ];
 
 echo "<ul>";
 foreach ($saisons as $element => $saison) {
-    echo "<li>" . $element . "</li>";// var_dump($element);
+    echo "<li><strong>" . $element . "</strong></li>";// var_dump($element);
     echo "<ul>";
     foreach ($saison as $cle_legume => $legume) {
         // var_dump($cle1);
