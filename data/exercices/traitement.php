@@ -25,6 +25,6 @@ switch ($method) {
     echo "E-mail : ".$email."</br>";
     echo "m.passe : ".$pwd."</br>";
 
-
+    var_dump($_GET);
 
 ?>

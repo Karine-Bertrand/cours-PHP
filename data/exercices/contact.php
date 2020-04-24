@@ -46,8 +46,8 @@
     </nav>
 
     <div class="container">
-        <!-- <form class="form-inline" method="get" action="traitement.php"> -->
-        <form class="form-inline" method="post" action="traitement.php">
+        <form class="form-inline" method="get" action="traitement.php">
+        <!-- <form class="form-inline" method="post" action="traitement.php"> -->
                 <label for="name">Nom : </label>
                 <input type="text" name="name">
                 <label for="email">Adresse mail : </label>
@@ -118,13 +118,14 @@
         </div>
     </div> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <footer>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Illum, fugiat itaque sequi placeat obcaecati earum, dicta fuga cumque nostrum ad quas dolorum in fugit voluptatibus
             voluptate id sit voluptatum quo.
         </footer>
-    </div>
+    </div> -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
