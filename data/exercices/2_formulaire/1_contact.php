@@ -1,0 +1,110 @@
+<?php
+
+?>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+ <?php include ('navbar.php') ?>
+
+    <div class="container">
+        <form class="form-inline" method="get" action="traitement.php">
+        <!-- <form class="form-inline" method="post" action="traitement.php"> -->
+                <label for="name">Nom : </label>
+                <input type="text" name="name">
+                <label for="email">Adresse mail : </label>
+                <input type="email" name="email">
+                <label for="pwd">Mot de passe : </label>
+                <input type="password" name="pwd">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    </div>
+
+    <!-- <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <a href="article.php?id=34">Titre de l'article 34</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestiae nesciunt, magnam beatae, reprehenderit
+                            <br>saepe totam ad ex inventore exercitationem pariatur quam? Soluta, vel nihil aperiam sunt consequuntur fugiat.
+                            <br>Fugiat!Labore pariatur similique distinctio suscipit ea aspernatur eos incidunt sit, minima tempore
+                            <br>voluptatum repellat eveniet assumenda hic ducimus praesentium voluptas beatae laboriosam modi excepturi eligendi
+                            <br>deleniti minus. Eligendi, autem magni.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <a href="article.php?id=35">Titre de l'article 35</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestiae nesciunt, magnam beatae, reprehenderit
+                            <br>saepe totam ad ex inventore exercitationem pariatur quam? Soluta, vel nihil aperiam sunt consequuntur
+                            fugiat.
+                            <br>Fugiat!Labore pariatur similique distinctio suscipit ea aspernatur eos incidunt sit, minima tempore
+                            <br>voluptatum repellat eveniet assumenda hic ducimus praesentium voluptas beatae laboriosam modi excepturi
+                            eligendi
+                            <br>deleniti minus. Eligendi, autem magni.
+                        </p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <a href="article.php?id=36">Titre de l'article 36</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestiae nesciunt, magnam beatae, reprehenderit
+                            <br>saepe totam ad ex inventore exercitationem pariatur quam? Soluta, vel nihil aperiam sunt consequuntur
+                            fugiat.
+                            <br>Fugiat!Labore pariatur similique distinctio suscipit ea aspernatur eos incidunt sit, minima tempore
+                            <br>voluptatum repellat eveniet assumenda hic ducimus praesentium voluptas beatae laboriosam modi excepturi
+                            eligendi
+                            <br>deleniti minus. Eligendi, autem magni.
+                        </p>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <a href="article.php?id=37">Titre de l'article 37</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestiae nesciunt, magnam beatae, reprehenderit
+                            <br>saepe totam ad ex inventore exercitationem pariatur quam? Soluta, vel nihil aperiam sunt consequuntur
+                            fugiat.
+                            <br>Fugiat!Labore pariatur similique distinctio suscipit ea aspernatur eos incidunt sit, minima tempore
+                            <br>voluptatum repellat eveniet assumenda hic ducimus praesentium voluptas beatae laboriosam modi excepturi
+                            eligendi
+                            <br>deleniti minus. Eligendi, autem magni.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="container">
+        <footer>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Illum, fugiat itaque sequi placeat obcaecati earum, dicta fuga cumque nostrum ad quas dolorum in fugit voluptatibus
+            voluptate id sit voluptatum quo.
+        </footer>
+    </div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
