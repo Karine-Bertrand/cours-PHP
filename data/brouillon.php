@@ -45,30 +45,24 @@ $etudiants = [
 // $etudiantTrouve = $etudiants[$keyCorrespondante];
 // var_dump($etudiantTrouve);
 
-
-
-$nb = 999;
-var_dump(strval ($nb));
-    // return $new;
+function nbIterations($nb){
     $count=0;
-    do {
+    $max = iconv_strlen(strval($nb));
+    while ($max > 1) {
         $tabNum= str_split(strval($nb));
         $x = 1;
         for($i=0;$i<count($tabNum);$i++){
             $x=$x*$tabNum[$i];
-            echo $i . " - " . $x . "</br>";
         }
         $count=$count+1;
-        echo " * " . $count . " - " . $x . "</br>";
         $nb=$x;
-        var_dump(strval($x));
         $max= iconv_strlen(strval($x));
-        echo "longueur de $x : " . $max;
-        var_dump($max);
-        var_dump($nb);
-        var_dump($count);
-
-    } while ($max=1);
+    };
     
+    return $count;
+}    
+
+echo nbIterations(999);
+
 
 ?>
