@@ -28,14 +28,14 @@ echo $msg; -->
 <?php
 
 $etudiants = [
-[
-'prenom' => 'john',
-'nom' => 'doe',
-],
-[
-'prenom' => 'emma',
-'nom' => 'doe'
-]
+    [
+        'prenom' => 'john',
+        'nom' => 'doe',
+    ],
+    [
+        'prenom' => 'emma',
+        'nom' => 'doe'
+    ]
 ];
 // // On extrait la colonne de $movies dans laquelle on souhaite rechercher
 // $colonne = array_column($etudiants, 'nom');
@@ -44,25 +44,39 @@ $etudiants = [
 // // Maintenant qu'on a la clé, on récupère le film via sa clé dans le tableau $movies
 // $etudiantTrouve = $etudiants[$keyCorrespondante];
 // var_dump($etudiantTrouve);
-
-function nbIterations($nb){
-    $count=0;
-    $max = iconv_strlen(strval($nb));
-    while ($max > 1) {
-        $tabNum= str_split(strval($nb));
-        $x = 1;
-        for($i=0;$i<count($tabNum);$i++){
-            $x=$x*$tabNum[$i];
-        }
-        $count=$count+1;
-        $nb=$x;
-        $max= iconv_strlen(strval($x));
-    };
-    
-    return $count;
-}    
-
-echo nbIterations(999);
-
-
 ?>
+<form action="brouillon.php" method="POST" class="form">
+    <div class="form-group">
+        <label for="">Nombre à tester</label>
+        <input name="nbTest" type="text" class="form-control">
+    </div>
+    <input type="submit" class="btn btn-primary">Envoyer le message</input>
+    <button role="button" class="btn btn-primary" aria->Envoyer le message</button>
+</form>
+
+
+    <?php
+
+
+    function nbIterations($nb)
+    {
+        $count = 0;
+        $max = iconv_strlen(strval($nb));
+        while ($max > 1) {
+            $tabNum = str_split(strval($nb));
+            $x = 1;
+            for ($i = 0; $i < count($tabNum); $i++) {
+                $x = $x * $tabNum[$i];
+            }
+            $count = $count + 1;
+            $nb = $x;
+            $max = iconv_strlen(strval($x));
+        };
+
+        return $count;
+    }
+
+    echo nbIterations(999);
+
+
+    ?>

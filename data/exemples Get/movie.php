@@ -12,20 +12,20 @@ $movie = $movies[$keyTrouvee];
     <div class="row">
         <div class="col">
 
-            <a href="listmovies.php">
-                < retour</a> <div class="card">
-                    <div class="card-header">#<?= $movie['id'] ?> - <?= $movie['title'] ?></div>
-                    <div class="card-body">
-                        <p>
-                            <strong>Catégorie</strong> : <?= $movie['category'] ?>
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        Un film réalisé par <?= $movie['director'] ?>
-                    </div>
+            <a href="listmovies.php"></a> 
+            
+            <div class="card">
+                <div class="card-header">#<?= $movie['id'] ?> - <?= $movie['title'] ?></div>
+                <div class="card-body">
+                    <p><strong>Catégorie</strong> : <?= $movie['category'] ?></p>
+                </div>
+                <div class="card-footer">
+                    Un film réalisé par <?= $movie['director'] ?>
+                </div>
+                
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <?php include('footer.php') ?>

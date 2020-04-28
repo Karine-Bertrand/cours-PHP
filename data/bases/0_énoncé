@@ -47,13 +47,14 @@ En gardant le code de l'exercice 3, testez si scoreManche1 et scoreManche2 exist
 
 Rappel de cours : tester l'existence d'une variable
 Pour tester si une variable existe, on utilisera isset():
+Pour tester son contenu, on utilise empty():
 
 if (isset($_GET['prenom']) {
   echo "Le prénom a été renseigné dans l'URL.";
 }
 Ou à l'inverse grâce à ! qui teste l'inverse dans un if :
 
-if ( !isset($_GET['prenom'] ) {
+if ( !isset($_GET['prenom']  OR empty($_GET['prenom])) { /* soit elle n'existe pas, soit elle n'est pas remplie*/
   echo "Attention ! Le prénom n'a pas été renseigné dans l'URL.";
 }
 Exercices
