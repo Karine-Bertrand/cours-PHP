@@ -1,0 +1,20 @@
+Vraies données ! 
+Créez une base de données wf3movies dans MySQL (soit via PHPMyAdmin soit via Workbench)
+Créez dedans la table suivante :
+movies
+----
+id INT PK AI
+title        VARCHAR(200)
+director     VARCHAR(200)
+category     VARCHAR(70)
+release_date DATETIME
+3. Ajoutez cinq films !
+4. En utilisant le code suivant dans le fichier de votre choix :
+$bdd = new PDO('mysql:host=localhost;dbname=NOMDELABDD;charset=utf8;port=3306', 'login', 'password');
+$request = "SELECT * FROM movies";
+$response = $bdd->query($request);
+$movies = $response->fetchAll(PDO::FETCH_ASSOC);
+Essayez d’afficher la liste des films.
+
+Affichez un lien qui pointe vers la page d’un film (showMovie.php par exemple), en passant en GET l’id du film. 
+En utilisant PDO et en récupérant la variable GET dans showMovie.php, retrouvez les données du film en base de données et affichez-les.
