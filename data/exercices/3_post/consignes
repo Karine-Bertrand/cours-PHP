@@ -1,0 +1,20 @@
+Créer les fichiers login.php et connect.php
+Dans login.php, faites un formulaire de connexion (adresse e-mail et mot de passe)
+Dans connect.php , affichez “Vous êtes connecté, voici les plans du V2 !” si l’email = admin@admin.com 
+et le mot de passe = superadmin . Sinon, afficher un message d’erreur.
+
+Dans le formulaire de login (login.php), rajoutez le select/option suivant :
+“Quel rôle ?”
+    “Client”
+    “Vendeur”
+    “Administrateur”
+Dans la page de traitement (connect.php), acceptez les utilisateurs suivants (ci-dessous email | password | role)
+client@client.com | 12345azerty | client
+johndoe@client.com | johnDoe123 | client
+vendeur@vendeur.com | az3rty | vendeur
+admin@admin.com | super@dmin | admin
+Vérifiez si l’utilisateur a droit de se loguer. 
+Il peut utiliser n’importe laquelle des combinaisons ci-dessus. 
+Vérifiez donc la bonne combinaison de email, password et role.
+Plutôt que de faire des “if” pour vérifier chaque utilisateur, ajoutez ces données dans un tableau, 
+utilisez des fonctions de arrays (par exemple : in_array , ou encore array_column + array_search )

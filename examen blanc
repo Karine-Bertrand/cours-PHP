@@ -1,0 +1,173 @@
+Examen : PHP/MySQL, POO, MVC - 4 heures
+Vous réaliserez un MVC basique en PHP.
+
+1. Mise en place du projet (2 points)
+Créer un projet Git : soit public, soit privé avec le formateur en administrateur
+Incluez à la fin de l'examen un export de votre base de données
+La structure du projet sera la suivante :
+
+- index.php
+- src/
+    - model
+    - controller
+    - views
+Dans index.php, vous incluerez le code suivant au tout début du fichier (autoload des classes) :
+
+<?php
+
+/**
+ * Autoload Classes
+ */
+ 
+const CLASSES_SOURCES = [
+    'src',
+    'src/model',
+    'src/controller'
+];
+
+function autoloadClass( $class ) {
+
+    $sources = array_map( function($folder) use($class) {
+
+        return __DIR__ . $folder . '/' . $class . '.php';
+
+    }, CLASSES_SOURCES );
+
+    foreach($sources as $s) {
+
+        if (file_exists( $s ) ) {
+            require_once ($s);
+        }
+    }
+
+
+}
+
+spl_autoload_register( 'autoloadClass' );
+2. Base de données (2 points)
+Créez une base de données que vous appellerez « votrePrenom_bibliotheque » :
+
+subscriber
+---
+ id(PK – AI – INT)
+ firstname (VARCHAR)
+ lastname (VARCHAR)
+
+subscriber_book
+id (PK – AI – INT)
+id_subscriber (INT)
+id_book (INT)
+
+book
+- id (PK – AI – INT)
+- title (VARCHAR)
+- author (VARCHAR)
+---
+3. Création d'un mini-routeur (2 points)
+Vous créérez un routeur sur la page index.php qui écoutera deux à trois paramètres GET : model, method et éventuellement id si besoin.
+
+Ces paramètres permettront de retrouver quelle méthode de quel contrôleur appeler, exemple :
+
+switch ($_GET['model']) {
+
+    case 'ouvrage':
+        
+        switch ($_GET['method'] :
+            case 'index':
+                OuvrageController::index();
+                break;
+            case 'show':
+                OuvrageController::show( $_GET['id'] );
+                break;
+                
+        break;
+
+}
+4. Réalisation des controllers, vues et models (2 points)
+Vous réaliserez des controllers qui accueilleront une méthode statique par route, exemple :
+
+OuvrageController.php
+
+class OuvrageController {
+
+    public static function index() {
+    }
+    
+    public static function show($id) {
+    }
+}
+Le contrôleur pourrait être rempli comme suit, en appelant les Model et Vues correspondants :
+
+OuvrageController.php
+
+class OuvrageController {
+
+    public static function index() {
+    
+        $ouvrages = Ouvrage::all();
+        include ('ouvrages/index.php');
+    
+    }
+    
+    public static function show($id) {
+    
+        $ouvrage = Ouvrage::find($id);
+        include ('ouvrages/show.php');
+    }
+}
+Les models pourront être comme suit (pensez à faire un héritage pour la méthode bdd() qui se retrouvera dans chaque model !)
+
+class Ouvrage {
+
+    private function bdd() {
+        $bdd = new PDO();
+        
+        return $bdd;
+    }
+    
+    public static function all() {
+    
+       $bdd = $this->bdd();
+       
+       $request = 'SELECT * FROM ouvrages';
+       $response = $bdd->query($request);
+       
+       $data = $response->fetchAll(PDO::FETCH_ASSOC);
+       return $data;
+    }
+
+}
+Les vues seront de simples fichiers .php contenant du HTML et appelant les variables déclarées avant les include().
+
+5. Enregistrement des données (5 points)
+En respectant une structure MVC, vous crééez un formulaire pour chaque table, et notamment un formulaire contenant 2 selects ("abonnés" et "ouvrages") pour le formulaire de la table d'association.
+
+Contrôles de saisie :
+
+Les champs ouvrage.titre, ouvrage.auteur, abonne.prenom, abonne.nom ne doivent pas faire plus de 150 caractères et ne doivent pas être vides.
+Les données doivent s'enregistrer en base de données.
+
+6. Affichage des données (5 points)
+Ouvrage et Abonne :
+
+Pour ces deux tables, vous créérez en MVC :
+
+Une page qui affiche la liste des éléments, sous forme de tableau
+Une page qui affiche 1 élément
+Un bouton "Editer" qui renvoie vers une page d'édition. L'update doit fonctionner en BDD.
+Un bouton "Supprimer" qui supprime l'élément. La suppression doit fonctionner en BDD.
+Table d'association :
+
+Une page qui affiche la liste des associations, sous forme de tableau
+Le tableau contiendra les champs :Nom | Prénom | Titre de l'ouvrage | Auteur
+Un bouton "Supprimer" qui supprime l'élément. La suppression doit fonctionner en BDD.
+
+7. Bonus (2 points)
+Vous produirez un code :
+Indenté
+Conceptualisé
+Documenté / Commenté
+Optimisé
+Factorisé
+Générique
+Maintenable
