@@ -18,9 +18,10 @@ $movies = $response->fetchAll(PDO::FETCH_ASSOC);
 
             <ul>
                 <?php foreach ($movies as $movie) : ?>
-                    <li>
-                        <strong>#<?= $movie['id'] ?> : <a href="showMovie.php?id=<?= $movie['id'] ?>"><?= $movie['title'] ?></a></strong> (<?= $movie['director'] ?>) - Genre : <?= $movie['category'] ?>
-                    </li>
+                    <h1>#<?= $movie['id'] ?> : <a href="showMovie.php?id=<?= $movie['id'] ?>"><?= $movie['title'] ?></a></h1>
+                    <p>
+                        <strong>(<?= $movie['director'] ?>)</strong>  - Genre : <?= $movie['category'] ?>
+                    </p>
 
                 <?php endforeach; ?>
             </ul>

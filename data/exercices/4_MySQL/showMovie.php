@@ -1,8 +1,5 @@
 <?php
 
-var_dump($_GET);
-$id = intval($_GET['id']);
-
 $bdd = new PDO('mysql:host=localhost;dbname=wf3movies;charset=utf8;port=3306', "root", "root");/* connexion */
 $request = "SELECT * FROM movies";/* appel requete */
 $response = $bdd->query($request);/* résultat de la requete */
@@ -22,7 +19,8 @@ $cle = array_search($_GET['id'], $listId);
 
             <div class="card">
 
-                <div class="card-header">#<?= $movies[$cle]['id'] ?> - <?= $movies[$cle]['title'] ?></div>
+                <div class="card-header">
+                    <h1>#<?= $movies[$cle]['id'] ?> - <?= $movies[$cle]['title'] ?></h1></div>
                 <div class="card-body">
                     <p><strong>Catégorie</strong> : <?= $movies[$cle]['category'] ?></p>
                 </div>
